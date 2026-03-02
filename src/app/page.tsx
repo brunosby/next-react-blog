@@ -1,20 +1,10 @@
-import clsx from "clsx";
+import Header from "@/components/Header";
 
-export default function HomePage() {
+export default async function HomePage() {
+  console.log("HOME");
   return (
     <div>
-      <h1
-        className={clsx(
-          "text-6xl font-bold",
-          "text-blue-500",
-          "hover:text-blue-50",
-          "hover:bg-blue-500",
-          "transition",
-          "duration-300",
-        )}
-      >
-        Texto no h1
-      </h1>
+      <Header />
     </div>
   );
 }
