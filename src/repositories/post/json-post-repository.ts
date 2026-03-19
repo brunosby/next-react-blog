@@ -6,8 +6,18 @@ import { readFile } from "fs/promises";
 const ROOT_DIR = process.cwd();
 const POSTS_FILE_PATH = resolve(ROOT_DIR, "src", "db", "seed", "posts.json");
 
+const SIMULATED_DELAY_MS = 5000;
+
 export class JsonPostRepository implements PostRepository {
+  private async simulateDelay() {
+    if (SIMULATED_DELAY_MS <= 0) return;
+
+    await new Promise((resolve) => setTimeout(resolve, SIMULATED_DELAY_MS));
+  }
+
   private async readFromDisk(): Promise<PostModel[]> {
+    await this.simulateDelay();
+
     const fileContent = await readFile(POSTS_FILE_PATH, "utf-8");
     const data = JSON.parse(fileContent);
     const { posts } = data;
