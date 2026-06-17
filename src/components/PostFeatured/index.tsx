@@ -1,5 +1,5 @@
 import { PostCoverImage } from "../PostCoverImage";
-import { PostHeading } from "../PostHeading";
+import { PostSummary } from "../PostSummary";
 
 export function PostFeatured() {
   const slug = "teste";
@@ -18,25 +18,13 @@ export function PostFeatured() {
         }}
       />
 
-      <div className="flex flex-col gap-4 sm:justify-center">
-        <time
-          dateTime="2026-06-01"
-          className="text-slate-600 text-sm/tight block"
-        >
-          2026/06/01 10:00
-        </time>
-
-        <PostHeading url={postLink} as="h1">
-          Título do post
-        </PostHeading>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          quae saepe consequatur nulla, cum explicabo eligendi aut ducimus
-          repellendus fugiat repellat ipsum veritatis pariatur, tenetur libero
-          assumenda nam consectetur voluptas.
-        </p>
-      </div>
+      <PostSummary
+        postHeading="h1"
+        postLink={postLink}
+        createdAt="2024-06-01T12:00:00Z"
+        title="Título do post em destaque"
+        excerpt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien augue. Sed at nunc ac nisl efficitur efficitur."
+      />
     </section>
   );
 }
