@@ -6,7 +6,7 @@ export default async function PostsList() {
   const posts = await findAllPublicPosts();
 
   return (
-    <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-8 grid-cols-1 mb-16 sm:grid-cols-2 lg:grid-cols-3">
       {posts.slice(1).map((post) => {
         const postLink = `/post/${post.slug}`;
 
