@@ -1,5 +1,5 @@
-import notFound from "@/app/not-found";
 import { postRepository } from "@/repositories/post";
+import { notFound } from "next/navigation";
 import { cache } from "react";
 
 export const findAllPublicPostsCached = cache(
