@@ -1,3 +1,5 @@
+"use client"; // called by error.tsx
+
 import clsx from "clsx";
 
 type ErrorMessageProps = {
